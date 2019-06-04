@@ -34,5 +34,6 @@ from .audio.dac import AudioDACApplet
 from .audio.yamaha_opl import AudioYamahaOPLApplet
 
 from .video.rgb_input import VideoRGBInputApplet
+from .video.taxi_test import TAXITestApplet
 from .video.vga_output import VGAOutputApplet
 from .video.vga_terminal import VGATerminalApplet
