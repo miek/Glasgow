@@ -2,7 +2,7 @@
 # Accession: G00083
 
 from typing import Optional
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 import argparse
 import logging
 import asyncio
@@ -233,7 +233,7 @@ class SensorSEN5xApplet(GlasgowAppletV2):
                         await asyncio.sleep(meas_interval / 2)
 
                     sample = await self.sen5x_iface.read_measurement()
-                    fields = sample._asdict()
+                    fields = asdict(sample)
                     await data_logger.report_data(fields)
                 try:
                     await asyncio.wait_for(report(), meas_interval * 3)
